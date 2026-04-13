@@ -2,172 +2,117 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deva Health</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="./style.css" />
     <script defer src="./script.js"></script>
   </head>
 
   <body>
-    <div class="min-h-screen bg-background font-sans text-foreground">
-      <nav
-        id="topNav"
-        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-6"
-        aria-label="Primary"
-      >
-        <div class="container mx-auto px-6 flex items-center justify-between">
-          <div class="flex items-center cursor-pointer" data-scroll="top">
-            <img
-              src="./assets/logo.png"
-              alt="Deva Health"
-              class="h-14 md:h-20 w-auto object-contain object-left"
-              width="340"
-              height="88"
-            />
-          </div>
-
-          <div class="hidden md:flex items-center gap-8" role="navigation">
-            <button data-scroll="catalog" class="text-sm font-medium hover:text-primary transition-colors">Каталог</button>
-            <button data-scroll="about" class="text-sm font-medium hover:text-primary transition-colors">Біз туралы</button>
-            <button data-scroll="reviews" class="text-sm font-medium hover:text-primary transition-colors">Пікірлер</button>
-            <button data-scroll="faq" class="text-sm font-medium hover:text-primary transition-colors">FAQ</button>
-          </div>
-
-          <button
-            data-scroll="catalog"
-            class="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 md:hidden"
-            type="button"
-          >
-            Каталог
+    <div class="page">
+      <nav id="topNav" class="nav" aria-label="Primary">
+        <div class="container nav-inner">
+          <button class="logo" type="button" data-scroll="top" aria-label="Deva Health">
+            <img src="./assets/logo.png" alt="Deva Health" width="340" height="88" />
           </button>
+
+          <div class="nav-links" role="navigation">
+            <button data-scroll="catalog" type="button">Каталог</button>
+            <button data-scroll="about" type="button">Біз туралы</button>
+            <button data-scroll="reviews" type="button">Пікірлер</button>
+            <button data-scroll="faq" type="button">FAQ</button>
+          </div>
+
+          <button data-scroll="catalog" class="nav-cta" type="button">Каталог</button>
         </div>
       </nav>
 
       <main>
-        <!-- Hero -->
-        <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-          <div class="absolute inset-0 z-0 opacity-20">
-            <div class="absolute top-0 -right-1/4 w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl"></div>
-            <div class="absolute -bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl"></div>
-          </div>
+        <section class="hero">
+          <div class="hero-glow hero-glow--one"></div>
+          <div class="hero-glow hero-glow--two"></div>
 
-          <div class="container mx-auto px-6 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-              <div class="max-w-2xl">
-                <div class="mb-6 border-primary/20 text-primary px-4 py-1 text-sm bg-primary/5 inline-flex rounded-md">
-                  Premium Wellness
-                </div>
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <span class="eyebrow">Premium Wellness</span>
+              <h1>
+                Табиғи сұлулық <br />
+                <span>және денсаулық</span>
+              </h1>
+              <p>
+                Deva Health — Бразилия, Үндістан және Орталық Азияның табиғи шөптерінен жасалған премиум
+                денсаулық және күтім өнімдері.
+              </p>
 
-                <h1 class="font-serif text-5xl lg:text-7xl font-bold leading-tight mb-6 text-foreground">
-                  Табиғи сұлулық <br />
-                  <span class="text-primary italic">және денсаулық</span>
-                </h1>
-
-                <p class="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  Deva Health — Бразилия, Үндістан және Орталық Азияның табиғи шөптерінен жасалған премиум денсаулық және күтім өнімдері.
-                </p>
-
-                <div class="flex flex-wrap gap-4">
-                  <button
-                    data-scroll="catalog"
-                    type="button"
-                    class="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 h-14 text-lg font-bold flex items-center"
-                  >
-                    Өнімдерді көру
-                    <span class="ml-2 w-5 h-5 inline-flex" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
-                        <path d="M7 12h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                        <path
-                          d="M13 7l5 5-5 5"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </span>
-                  </button>
-
-                  <button
-                    data-scroll="about"
-                    type="button"
-                    class="rounded-full px-8 h-14 text-lg border-primary/20 hover:bg-primary/5 text-primary font-medium border"
-                  >
-                    Толығырақ білу
-                  </button>
-                </div>
+              <div class="cta-group">
+                <button data-scroll="catalog" type="button" class="btn btn-primary">
+                  Өнімдерді көру
+                  <span class="btn-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                      <path d="M7 12h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                      <path
+                        d="M13 7l5 5-5 5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <button data-scroll="about" type="button" class="btn btn-ghost">Толығырақ білу</button>
               </div>
+            </div>
 
-              <div class="relative">
-                <div class="rounded-3xl overflow-hidden shadow-2xl">
-                  <img
-                    src="./assets/glav.png"
-                    alt="Deva Health Products"
-                    class="w-full h-auto object-contain"
-                  />
-                </div>
+            <div class="hero-media">
+              <div class="hero-card">
+                <img src="./assets/glav.png" alt="Deva Health Products" />
               </div>
             </div>
           </div>
         </section>
 
-        <!-- Stats strip -->
-        <section class="py-10 bg-primary text-primary-foreground relative z-20">
-          <div class="container mx-auto px-6 max-w-6xl">
-            <div class="flex flex-wrap justify-center gap-8 md:gap-16">
-              <div class="flex items-center gap-3">
-                <svg class="w-6 h-6 opacity-80" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <section class="stats">
+          <div class="container">
+            <div class="stats-list">
+              <div class="stat">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path
                     d="M12 2l3 7h7l-5.5 4.2 2.1 7.8L12 17.8 5.4 21l2.1-7.8L2 9h7l3-7z"
                     fill="currentColor"
-                    opacity="0.9"
                   />
                 </svg>
-                <span class="font-medium tracking-wide">Айқын нәтиже</span>
+                <span>Айқын нәтиже</span>
               </div>
-              <div class="flex items-center gap-3">
-                <svg class="w-6 h-6 opacity-80" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <div class="stat">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path
                     d="M12 21s-7-4.4-7-11a7 7 0 0 1 14 0c0 6.6-7 11-7 11Z"
                     fill="currentColor"
-                    opacity="0.9"
                   />
                 </svg>
-                <span class="font-medium tracking-wide">100% табиғи</span>
+                <span>100% табиғи</span>
               </div>
-              <div class="flex items-center gap-3">
-                <svg class="w-6 h-6 opacity-80" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" fill="currentColor" opacity="0.9" />
-                  <circle cx="8.5" cy="7" r="4" fill="currentColor" opacity="0.9" />
-                  <path
-                    d="M20 8v6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    opacity="0.9"
-                  />
-                  <path
-                    d="M23 11h-6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    opacity="0.9"
-                  />
+              <div class="stat">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" fill="currentColor" />
+                  <circle cx="8.5" cy="7" r="4" fill="currentColor" />
+                  <path d="M20 8v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M23 11h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                 </svg>
-                <span class="font-medium tracking-wide">30 000+ риза тұтынушылар</span>
+                <span>30 000+ риза тұтынушылар</span>
               </div>
-              <div class="flex items-center gap-3">
-                <svg class="w-6 h-6 opacity-80" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path
-                    d="M4 4h16v16H4V4Z"
-                    fill="currentColor"
-                    opacity="0.9"
-                  />
+              <div class="stat">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 4h16v16H4V4Z" fill="currentColor" />
                   <path
                     d="M7 12l3 3 7-7"
                     stroke="white"
@@ -176,146 +121,208 @@
                     stroke-linejoin="round"
                   />
                 </svg>
-                <span class="font-medium tracking-wide">Гарантиялық талон</span>
+                <span>Гарантиялық талон</span>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- Catalog -->
-        <section id="catalog" class="py-12 bg-card">
-          <div class="container mx-auto px-6 max-w-5xl">
-            <div class="text-center max-w-3xl mx-auto mb-8">
-              <h2 class="font-serif text-4xl font-bold mb-4">Біздің өнімдер</h2>
-              <p class="text-muted-foreground text-lg">Табиғаттың ең таза ингредиенттерінен жасалған премиум кешендер</p>
+        <section id="catalog" class="section section-surface">
+          <div class="container">
+            <div class="section-heading">
+              <h2>Біздің өнімдер</h2>
+              <p>Табиғаттың ең таза ингредиенттерінен жасалған премиум кешендер</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7 items-stretch">
-              <!-- Product card 1 -->
-              <div class="product-card group overflow-hidden border border-primary/10 shadow-sm hover:shadow-xl transition-all duration-300 bg-background rounded-3xl max-w-[290px] w-full mx-auto h-full flex flex-col">
-                <div class="relative h-48 overflow-hidden bg-secondary/30">
-                  <div class="absolute top-4 left-4 bg-primary text-primary-foreground z-10 px-3 py-1">Хит</div>
-                  <img
-                    src="./assets/tov1.png"
-                    alt="Deva Health Product 1"
-                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  />
+            <div class="product-grid">
+              <article class="product-card">
+                <div class="product-media">
+                  <span class="product-tag">Хит</span>
+                  <img src="./assets/tov1.png" alt="Deva Health Product 1" />
                 </div>
-
-                <div class="p-3 flex flex-col flex-1">
-                  <p class="text-xs text-primary font-medium mb-2 uppercase tracking-wider">Дневной wellness-комплекс</p>
-                  <h3 class="font-serif text-lg font-bold mb-2">DEVA Health Day</h3>
-                  <p class="text-sm text-muted-foreground mb-3 line-clamp-3">
-                    Натуральный дневной комплекс для поддержки баланса, энергии и общего состояния организма. Рекомендуется как дополнительный источник микроэлементов и антиоксидантов.
+                <div class="product-body">
+                  <p class="product-eyebrow">Дневной wellness-комплекс</p>
+                  <h3>DEVA Health Day</h3>
+                  <p class="product-text">
+                    Натуральный дневной комплекс для поддержки баланса, энергии и общего состояния организма.
+                    Рекомендуется как дополнительный источник микроэлементов и антиоксидантов.
                   </p>
-
-                  <div class="pt-3 border-t border-border mt-auto">
-                    <p class="text-xs text-muted-foreground mb-2 line-clamp-2">
-                      <span class="font-semibold text-foreground">Состав:</span>
-                      &nbsp;мохилхин, хельба, куркума, бурабай шөбі, микрокристаллическая целлюлоза.
+                  <div class="product-footer">
+                    <p class="product-note">
+                      <span>Состав:</span>
+                      мохилхин, хельба, куркума, бурабай шөбі, микрокристаллическая целлюлоза.
                     </p>
-                    <p class="text-xs text-primary/90 mb-3 line-clamp-2">
+                    <p class="product-highlight">
                       Поддержка гормонального баланса • антиоксиданты • поддержка пищеварения
                     </p>
-
-                    <button
-                      type="button"
-                      data-product-toggle="day"
-                      class="w-full rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-                    >
-                      Подробнее
-                    </button>
-                    <div id="product-day-details" class="hidden mt-3 text-xs text-muted-foreground space-y-2">
-                      <p><span class="font-semibold text-foreground">Ключевые компоненты:</span> куркума, хельба, мохилхин, бурабай шөбі, микрокристаллическая целлюлоза.</p>
-                      <p><span class="font-semibold text-foreground">Преимущества:</span> поддержка женского баланса, обменных процессов, пищеварения и общего тонуса в течение дня.</p>
-                      <p><span class="font-semibold text-foreground">Формат приема:</span> подходит для дневного использования.</p>
+                    <button type="button" data-product-toggle="day" class="btn btn-soft">Подробнее</button>
+                    <div id="product-day-details" class="product-details hidden">
+                      <p><span>Ключевые компоненты:</span> куркума, хельба, мохилхин, бурабай шөбі, микрокристаллическая целлюлоза.</p>
+                      <p><span>Преимущества:</span> поддержка женского баланса, обменных процессов, пищеварения и общего тонуса в течение дня.</p>
+                      <p><span>Формат приема:</span> подходит для дневного использования.</p>
                     </div>
                   </div>
                 </div>
-              </div>
+              </article>
 
-              <!-- Product card 2 -->
-              <div class="product-card group overflow-hidden border border-primary/10 shadow-sm hover:shadow-xl transition-all duration-300 bg-background rounded-3xl max-w-[290px] w-full mx-auto h-full flex flex-col">
-                <div class="relative h-48 overflow-hidden bg-secondary/30">
-                  <div class="absolute top-4 left-4 bg-primary text-primary-foreground z-10 px-3 py-1">Жаңалық</div>
-                  <img
-                    src="./assets/tov2.png"
-                    alt="Deva Health Product 2"
-                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  />
+              <article class="product-card">
+                <div class="product-media">
+                  <span class="product-tag">Жаңалық</span>
+                  <img src="./assets/tov2.png" alt="Deva Health Product 2" />
                 </div>
-
-                <div class="p-3 flex flex-col flex-1">
-                  <p class="text-xs text-primary font-medium mb-2 uppercase tracking-wider">Вечерний wellness-комплекс</p>
-                  <h3 class="font-serif text-lg font-bold mb-2">DEVA Health Night</h3>
-                  <p class="text-sm text-muted-foreground mb-3 line-clamp-3">
-                    Натуральный ночной комплекс для поддержки баланса пищеварительной системы, энергии и общего состояния организма.  Обеспечивает все процессы, происходящие в организме ночью, и облегчает нагрузку на пищеварительную систему. Восстанавливает гормоны, вырабатывающиеся в ночное время.
+                <div class="product-body">
+                  <p class="product-eyebrow">Вечерний wellness-комплекс</p>
+                  <h3>DEVA Health Night</h3>
+                  <p class="product-text">
+                    Формула для мягкого вечернего восстановления, гармонии и естественных процессов организма ночью.
+                    Дополнена валерианой для поддержки спокойствия.
                   </p>
-
-                  <div class="pt-3 border-t border-border mt-auto">
-                    <p class="text-xs text-muted-foreground mb-2 line-clamp-2">
-                      <span class="font-semibold text-foreground">Состав:</span>
-                      &nbsp;мохилхин, хельба, куркума, валериана, микрокристаллическая целлюлоза.
+                  <div class="product-footer">
+                    <p class="product-note">
+                      <span>Состав:</span>
+                      мохилхин, хельба, куркума, валериана, микрокристаллическая целлюлоза.
                     </p>
-                    <p class="text-xs text-primary/90 mb-3 line-clamp-2">
-                      Поддержка желудочно-кишечного тракта • антиоксиданты • баланс  микрофлоры
-                    </p>
-
-                    <button
-                      type="button"
-                      data-product-toggle="night"
-                      class="w-full rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-                    >
-                      Подробнее
-                    </button>
-                    <div id="product-night-details" class="hidden mt-3 text-xs text-muted-foreground space-y-2">
-                      <p><span class="font-semibold text-foreground">Ключевые компоненты:</span> валериана, куркума, хельба, мохилхин, микрокристаллическая целлюлоза.</p>
-                      <p><span class="font-semibold text-foreground">Преимущества:</span> поддержка спокойствия, мягкого вечернего восстановления и естественных процессов ночью.</p>
-                      <p><span class="font-semibold text-foreground">Формат приема:</span> подходит для вечернего использования.</p>
+                    <p class="product-highlight">Спокойствие и вечернее восстановление • мягкий натуральный состав</p>
+                    <button type="button" data-product-toggle="night" class="btn btn-soft">Подробнее</button>
+                    <div id="product-night-details" class="product-details hidden">
+                      <p><span>Ключевые компоненты:</span> валериана, куркума, хельба, мохилхин, микрокристаллическая целлюлоза.</p>
+                      <p><span>Преимущества:</span> поддержка спокойствия, мягкого вечернего восстановления и естественных процессов ночью.</p>
+                      <p><span>Формат приема:</span> подходит для вечернего использования.</p>
                     </div>
                   </div>
                 </div>
-              </div>
+              </article>
 
-              <!-- Product card 3: Devatin -->
-              <div class="product-card group overflow-hidden border border-primary/10 shadow-sm hover:shadow-xl transition-all duration-300 bg-background rounded-3xl max-w-[290px] w-full mx-auto h-full flex flex-col">
-                <div class="relative h-48 overflow-hidden bg-secondary/30">
-                  <div class="absolute top-4 left-4 bg-primary text-primary-foreground z-10 px-3 py-1">Акция</div>
-                  <img
-                    src="./assets/devatin.png"
-                    alt="Devatin"
-                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  />
+              <article class="product-card">
+                <div class="product-media">
+                  <span class="product-tag">Акция</span>
+                  <img src="./assets/devatin.png" alt="Devatin" />
                 </div>
-
-                <div class="p-3 flex flex-col flex-1">
-                  <p class="text-xs text-primary font-medium mb-2 uppercase tracking-wider">Коллаген + биотин + 12 минералов</p>
-                  <h3 class="font-serif text-lg font-bold mb-2">DEVATIN</h3>
-                  <p class="text-sm text-muted-foreground mb-3 line-clamp-3">
-                    Комплекс для поддержки суставов, хрящей, костей и мышц. Помогает сохранять подвижность, эластичность тканей и качество восстановления после нагрузок.
+                <div class="product-body">
+                  <p class="product-eyebrow">Коллаген + биотин + 12 минералов</p>
+                  <h3>DEVATIN</h3>
+                  <p class="product-text">
+                    Комплекс для поддержки суставов, хрящей, костей и мышц. Помогает сохранять подвижность,
+                    эластичность тканей и качество восстановления после нагрузок.
                   </p>
-
-                  <div class="pt-3 border-t border-border mt-auto">
-                    <p class="text-xs text-muted-foreground mb-2 line-clamp-2">
-                      <span class="font-semibold text-foreground">Состав:</span>
-                      &nbsp;коллаген, биотин, калий, йод, кальций, марганец, медь, магний, цинк, сера, натрий, селен, железо, мальтодекстрин.
+                  <div class="product-footer">
+                    <p class="product-note">
+                      <span>Состав:</span>
+                      коллаген, биотин, калий, йод, кальций, марганец, медь, магний, цинк, сера, натрий, селен,
+                      железо, мальтодекстрин.
                     </p>
-                    <p class="text-xs text-primary/90 mb-3 line-clamp-2">
-                      Поддержка суставов и костей • подвижность • восстановление и тонус
-                    </p>
-
-                    <button
-                      type="button"
-                      data-product-toggle="devatin"
-                      class="w-full rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-                    >
-                      Подробнее
-                    </button>
-                    <div id="product-devatin-details" class="hidden mt-3 text-xs text-muted-foreground space-y-2">
-                      <p><span class="font-semibold text-foreground">Состав:</span> коллаген, биотин и 12 минералов (калий, йод, кальций, марганец, медь, магний, цинк, сера, натрий, селен, железо, мальтодекстрин).</p>
-                      <p><span class="font-semibold text-foreground">Преимущества:</span> поддержка суставов, хрящей, костей, мышц, подвижности и восстановления после нагрузок.</p>
-                      <p><span class="font-semibold text-foreground">Ежедневная поддержка:</span> тонус, эластичность тканей и комфорт движения.</p>
+                    <p class="product-highlight">Поддержка суставов и костей • подвижность • восстановление и тонус</p>
+                    <button type="button" data-product-toggle="devatin" class="btn btn-soft">Подробнее</button>
+                    <div id="product-devatin-details" class="product-details hidden">
+                      <p><span>Состав:</span> коллаген, биотин и 12 минералов (калий, йод, кальций, марганец, медь, магний, цинк, сера, натрий, селен, железо, мальтодекстрин).</p>
+                      <p><span>Преимущества:</span> поддержка суставов, хрящей, костей, мышц, подвижности и восстановления после нагрузок.</p>
+                      <p><span>Ежедневная поддержка:</span> тонус, эластичность тканей и комфорт движения.</p>
                     </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="section">
+          <div class="container about-grid">
+            <div class="about-media">
+              <img src="./assets/about.png" alt="Deva Health Collection" />
+            </div>
+            <div class="about-content">
+              <h2>Неге Deva Health таңдайды?</h2>
+
+              <div class="about-list">
+                <div class="about-item">
+                  <span class="about-icon">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path
+                        d="M20 6L9 17l-5-5"
+                        stroke="currentColor"
+                        stroke-width="2.4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <div>
+                    <h4>100% табиғи құрам</h4>
+                    <p>Жасанды қоспаларсыз, тек таза табиғи шөптер мен сығындылар.</p>
+                  </div>
+                </div>
+
+                <div class="about-item">
+                  <span class="about-icon">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path
+                        d="M20 7h-9l-2 2H4v12h16V7Z"
+                        stroke="currentColor"
+                        stroke-width="2.4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M7 19a2 2 0 1 0 0.01 0"
+                        stroke="currentColor"
+                        stroke-width="2.4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <div>
+                    <h4>Жылдам жеткізу</h4>
+                    <p>Қазақстан бойынша жылдам әрі сенімді жеткізу қызметі.</p>
+                  </div>
+                </div>
+
+                <div class="about-item">
+                  <span class="about-icon">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path
+                        d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4Z"
+                        stroke="currentColor"
+                        stroke-width="2.4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <div>
+                    <h4>Кепілдік</h4>
+                    <p>Сапаға кепілдік береміз, нәтиже болмаса ақшаңызды қайтарамыз.</p>
+                  </div>
+                </div>
+
+                <div class="about-item">
+                  <span class="about-icon">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M3 10h18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+                      <path
+                        d="M5 6h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"
+                        stroke="currentColor"
+                        stroke-width="2.4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <div>
+                    <h4>Ыңғайлы төлем</h4>
+                    <p>Кез келген ыңғайлы тәсілмен төлеу мүмкіндігі.</p>
+                  </div>
+                </div>
+
+                <div class="about-item">
+                  <span class="about-icon">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7Z" fill="currentColor" />
+                    </svg>
+                  </span>
+                  <div>
+                    <h4>Сенімділік</h4>
+                    <p>Халықаралық сапа стандарттарына сай өндіріс.</p>
                   </div>
                 </div>
               </div>
@@ -323,241 +330,121 @@
           </div>
         </section>
 
-        <!-- About -->
-        <section id="about" class="py-24 relative overflow-hidden">
-          <div class="container mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-              <div class="relative">
-                <img
-                  src="./assets/about.png"
-                  alt="Deva Health Collection"
-                  class="rounded-3xl shadow-2xl relative z-10"
-                />
-                <div class="absolute inset-0 bg-primary/5 transform translate-x-4 translate-y-4 rounded-3xl -z-10"></div>
-              </div>
+        <section class="section section-surface">
+          <div class="container">
+            <div class="section-heading">
+              <h2>Довольные клиенты</h2>
+              <p>Реальные фото наших клиенток после знакомства с Deva Health</p>
+            </div>
 
-              <div>
-                <h2 class="font-serif text-4xl font-bold mb-8">Неге Deva Health таңдайды?</h2>
-
-                <div class="space-y-6">
-                  <div class="flex gap-4">
-                    <div class="mt-1 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path
-                          d="M20 6L9 17l-5-5"
-                          stroke="currentColor"
-                          stroke-width="2.4"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 class="font-bold text-lg mb-1">100% табиғи құрам</h4>
-                      <p class="text-muted-foreground">Жасанды қоспаларсыз, тек таза табиғи шөптер мен сығындылар.</p>
-                    </div>
-                  </div>
-
-                  <div class="flex gap-4">
-                    <div class="mt-1 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path
-                          d="M20 7h-9l-2 2H4v12h16V7Z"
-                          stroke="currentColor"
-                          stroke-width="2.4"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M7 19a2 2 0 1 0 0.01 0"
-                          stroke="currentColor"
-                          stroke-width="2.4"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 class="font-bold text-lg mb-1">Жылдам жеткізу</h4>
-                      <p class="text-muted-foreground">Қазақстан бойынша жылдам әрі сенімді жеткізу қызметі.</p>
-                    </div>
-                  </div>
-
-                  <div class="flex gap-4">
-                    <div class="mt-1 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path
-                          d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4Z"
-                          stroke="currentColor"
-                          stroke-width="2.4"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 class="font-bold text-lg mb-1">Кепілдік</h4>
-                      <p class="text-muted-foreground">Сапаға кепілдік береміз, нәтиже болмаса ақшаңызды қайтарамыз.</p>
-                    </div>
-                  </div>
-
-                  <div class="flex gap-4">
-                    <div class="mt-1 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path d="M3 10h18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
-                        <path
-                          d="M5 6h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"
-                          stroke="currentColor"
-                          stroke-width="2.4"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 class="font-bold text-lg mb-1">Ыңғайлы төлем</h4>
-                      <p class="text-muted-foreground">Кез келген ыңғайлы тәсілмен төлеу мүмкіндігі.</p>
-                    </div>
-                  </div>
-
-                  <div class="flex gap-4">
-                    <div class="mt-1 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path
-                          d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7Z"
-                          fill="currentColor"
-                          opacity="0.85"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 class="font-bold text-lg mb-1">Сенімділік</h4>
-                      <p class="text-muted-foreground">Халықаралық сапа стандарттарына сай өндіріс.</p>
-                    </div>
-                  </div>
+            <div class="scroll-row" aria-label="Фото клиентов">
+              <div class="scroll-track">
+                <div class="media-card">
+                  <img src="./assets/client1.png" alt="Фото клиентки 1" />
+                </div>
+                <div class="media-card">
+                  <img src="./assets/client2.png" alt="Фото клиентки 2" />
+                </div>
+                <div class="media-card">
+                  <img src="./assets/client3.png" alt="Фото клиентки 3" />
+                </div>
+                <div class="media-card">
+                  <img src="./assets/client4.png" alt="Фото клиентки 4" />
+                </div>
+                <div class="media-card">
+                  <img src="./assets/client7.png" alt="Фото клиентки 7" />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- Happy clients photos -->
-        <section class="py-16 bg-card overflow-hidden">
-          <div class="container mx-auto px-6 max-w-6xl">
-            <div class="text-center max-w-3xl mx-auto mb-10">
-              <h2 class="font-serif text-4xl font-bold mb-4">Довольные клиенты</h2>
-              <p class="text-muted-foreground text-lg">Реальные фото наших клиенток после знакомства с Deva Health</p>
+        <section id="reviews" class="section">
+          <div class="container">
+            <div class="section-heading">
+              <h2>Тұтынушылар пікірі</h2>
+              <p>Біздің өнімдерімізді қолданып көрген жандардың шынайы пікірлері</p>
             </div>
 
-            <div class="clients-scroll">
-              <div class="clients-track">
-                <div class="client-photo-card snap-start rounded-3xl overflow-hidden shadow-sm border border-primary/10 bg-background">
-                  <img src="./assets/client1.png" alt="Фото клиентки 1" class="client-photo-img" />
+            <div class="scroll-row" aria-label="Отзывы">
+              <div class="scroll-track">
+                <div class="media-card media-card--wide">
+                  <img src="./assets/com1.png" alt="Отзыв 1" />
                 </div>
-                <div class="client-photo-card snap-start rounded-3xl overflow-hidden shadow-sm border border-primary/10 bg-background">
-                  <img src="./assets/client2.png" alt="Фото клиентки 2" class="client-photo-img" />
+                <div class="media-card media-card--wide">
+                  <img src="./assets/com2.png" alt="Отзыв 2" />
                 </div>
-                <div class="client-photo-card snap-start rounded-3xl overflow-hidden shadow-sm border border-primary/10 bg-background">
-                  <img src="./assets/client3.png" alt="Фото клиентки 3" class="client-photo-img" />
+                <div class="media-card media-card--wide">
+                  <img src="./assets/com3.png" alt="Отзыв 3" />
                 </div>
-                <div class="client-photo-card snap-start rounded-3xl overflow-hidden shadow-sm border border-primary/10 bg-background">
-                  <img src="./assets/client4.png" alt="Фото клиентки 4" class="client-photo-img" />
-                </div>
-                <div class="client-photo-card snap-start rounded-3xl overflow-hidden shadow-sm border border-primary/10 bg-background">
-                  <img src="./assets/client7.png" alt="Фото клиентки 7" class="client-photo-img" />
+                <div class="media-card media-card--wide">
+                  <img src="./assets/com4.png" alt="Отзыв 4" />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- Reviews -->
-        <section id="reviews" class="py-24 bg-card">
-          <div class="container mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-              <h2 class="font-serif text-4xl font-bold mb-4">Тұтынушылар пікірі</h2>
-              <p class="text-muted-foreground text-lg">Біздің өнімдерімізді қолданып көрген жандардың шынайы пікірлері</p>
+        <section id="faq" class="section section-surface">
+          <div class="container faq">
+            <div class="section-heading">
+              <h2>Жиі қойылатын сұрақтар</h2>
             </div>
-            <div class="reviews-scroll">
-              <div class="reviews-track">
-                <div class="client-photo-card snap-start rounded-3xl overflow-hidden shadow-sm border border-primary/10 bg-background">
-                  <img src="./assets/com1.png" alt="Отзыв 1" class="client-photo-img" />
-                </div>
-                <div class="client-photo-card snap-start rounded-3xl overflow-hidden shadow-sm border border-primary/10 bg-background">
-                  <img src="./assets/com2.png" alt="Отзыв 2" class="client-photo-img" />
-                </div>
-                <div class="client-photo-card snap-start rounded-3xl overflow-hidden shadow-sm border border-primary/10 bg-background">
-                  <img src="./assets/com3.png" alt="Отзыв 3" class="client-photo-img" />
-                </div>
-                <div class="client-photo-card snap-start rounded-3xl overflow-hidden shadow-sm border border-primary/10 bg-background">
-                  <img src="./assets/com4.png" alt="Отзыв 4" class="client-photo-img" />
+
+            <div class="faq-list">
+              <div class="faq-item">
+                <button
+                  type="button"
+                  class="faq-question"
+                  aria-expanded="false"
+                  aria-controls="faq-0"
+                >
+                  Өнімнің құрамы толықтай табиғи ма?
+                </button>
+                <div id="faq-0" class="faq-answer hidden">
+                  Иә, біздің өнімдер 100% табиғи ингредиенттерден тұрады. Құрамында ешқандай жасанды қоспалар жоқ.
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
 
-        <!-- FAQ -->
-        <section id="faq" class="py-24 relative">
-          <div class="container mx-auto px-6">
-            <div class="max-w-3xl mx-auto">
-              <h2 class="font-serif text-4xl font-bold mb-8 text-center">Жиі қойылатын сұрақтар</h2>
-
-              <div class="w-full">
-                <div class="border-b border-primary/10 py-2">
-                  <button
-                    type="button"
-                    class="text-left font-medium text-lg hover:text-primary transition-colors w-full"
-                    aria-expanded="false"
-                    aria-controls="faq-0"
-                  >
-                    Өнімнің құрамы толықтай табиғи ма?
-                  </button>
-                  <div id="faq-0" class="text-muted-foreground text-base leading-relaxed mt-2 hidden">
-                    Иә, біздің өнімдер 100% табиғи ингредиенттерден тұрады. Құрамында ешқандай жасанды қоспалар жоқ.
-                  </div>
+              <div class="faq-item">
+                <button
+                  type="button"
+                  class="faq-question"
+                  aria-expanded="false"
+                  aria-controls="faq-1"
+                >
+                  Курс қанша уақытқа созылады?
+                </button>
+                <div id="faq-1" class="faq-answer hidden">
+                  Толық нәтижеге жету үшін 1-3 айлық курс ұсынылады. Әр ағза жеке болғандықтан, нәтиже әртүрлі уақытта байқалуы мүмкін.
                 </div>
+              </div>
 
-                <div class="border-b border-primary/10 py-2">
-                  <button
-                    type="button"
-                    class="text-left font-medium text-lg hover:text-primary transition-colors w-full"
-                    aria-expanded="false"
-                    aria-controls="faq-1"
-                  >
-                    Курс қанша уақытқа созылады?
-                  </button>
-                  <div id="faq-1" class="text-muted-foreground text-base leading-relaxed mt-2 hidden">
-                    Толық нәтижеге жету үшін 3-6 айлық курс ұсынылады. Әр ағза жеке болғандықтан, нәтиже әртүрлі уақытта байқалуы мүмкін.
-                  </div>
+              <div class="faq-item">
+                <button
+                  type="button"
+                  class="faq-question"
+                  aria-expanded="false"
+                  aria-controls="faq-2"
+                >
+                  Жеткізу қалай жүзеге асады?
+                </button>
+                <div id="faq-2" class="faq-answer hidden">
+                  Қазақстанның барлық қалаларына жеткізу қарастырылған. Тапсырыс берген соң менеджер сізбен хабарласып, ыңғайлы уақытты келіседі.
                 </div>
+              </div>
 
-                <div class="border-b border-primary/10 py-2">
-                  <button
-                    type="button"
-                    class="text-left font-medium text-lg hover:text-primary transition-colors w-full"
-                    aria-expanded="false"
-                    aria-controls="faq-2"
-                  >
-                    Жеткізу қалай жүзеге асады?
-                  </button>
-                  <div id="faq-2" class="text-muted-foreground text-base leading-relaxed mt-2 hidden">
-                    Қазақстанның барлық қалаларына жеткізу қарастырылған. Тапсырыс берген соң менеджер сізбен хабарласып, ыңғайлы уақытты келіседі.
-                  </div>
-                </div>
-
-                <div class="border-b border-primary/10 py-2">
-                  <button
-                    type="button"
-                    class="text-left font-medium text-lg hover:text-primary transition-colors w-full"
-                    aria-expanded="false"
-                    aria-controls="faq-3"
-                  >
-                    Қарсы көрсетілімдері бар ма?
-                  </button>
-                  <div id="faq-3" class="text-muted-foreground text-base leading-relaxed mt-2 hidden">
-                    Жүктілік және лактация кезінде, сондай-ақ құрамындағы шөптерге жеке төзбеушілік болған жағдайда дәрігермен кеңесу ұсынылады.
-                  </div>
+              <div class="faq-item">
+                <button
+                  type="button"
+                  class="faq-question"
+                  aria-expanded="false"
+                  aria-controls="faq-3"
+                >
+                  Қарсы көрсетілімдері бар ма?
+                </button>
+                <div id="faq-3" class="faq-answer hidden">
+                  Жүктілік және лактация кезінде, сондай-ақ құрамындағы шөптерге жеке төзбеушілік болған жағдайда дәрігермен кеңесу ұсынылады.
                 </div>
               </div>
             </div>
@@ -565,78 +452,63 @@
         </section>
       </main>
 
-      <!-- Footer -->
-      <footer class="bg-foreground text-background py-16">
-        <div class="container mx-auto px-6">
-          <div class="mb-6">
-            <img
-              src="./assets/logo.png"
-              alt="Deva Health"
-              class="h-12 md:h-16 w-auto max-w-[220px] object-contain object-left"
-              width="220"
-              height="64"
-            />
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-brand">
+            <img src="./assets/logo.png" alt="Deva Health" width="220" height="64" />
           </div>
 
-          <div class="text-white/60 text-sm">
-            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <div class="space-y-2">
-                <p class="text-white/80 font-semibold">Әлеуметтік желі</p>
-                <div class="flex items-center gap-4">
-                  <a
-                    href="https://www.instagram.com/devahealth.kz?igsh=Mnk1cmdlMWgzdndp"
-                    class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
-                    aria-label="Instagram"
-                  >
-                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <rect x="5" y="5" width="14" height="14" rx="3" stroke="currentColor" stroke-width="2" />
-                      <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="2" />
-                      <circle cx="16.8" cy="7.2" r="1" fill="currentColor" />
-                    </svg>
-                  </a>
-                  <a
-                    href="https://wa.me/77083632597"
-                    class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
-                    aria-label="WhatsApp"
-                  >
-                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.655-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.521.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.074-.149-.669-1.613-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.1 3.204 5.077 4.487.708.306 1.262.489 1.694.625.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.413-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.89-9.884a9.86 9.86 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c-.003 5.45-4.438 9.884-9.888 9.884M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.168 1.598 5.975L0 24l6.275-1.646A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0" />
-                    </svg>
-                  </a>
-                  <span class="text-white/60">+7 708 363 2597</span>
-                </div>
+          <div class="footer-grid">
+            <div>
+              <p class="footer-title">Әлеуметтік желі</p>
+              <div class="footer-social">
+                <a
+                  href="https://www.instagram.com/devahealth.kz?igsh=Mnk1cmdlMWgzdndp"
+                  aria-label="Instagram"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <rect x="5" y="5" width="14" height="14" rx="3" stroke="currentColor" stroke-width="2" />
+                    <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="2" />
+                    <circle cx="16.8" cy="7.2" r="1" fill="currentColor" />
+                  </svg>
+                </a>
+                <a href="https://wa.me/77083632597" aria-label="WhatsApp">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.655-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.521.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.074-.149-.669-1.613-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.1 3.204 5.077 4.487.708.306 1.262.489 1.694.625.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.413-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.89-9.884a9.86 9.86 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c-.003 5.45-4.438 9.884-9.888 9.884M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.168 1.598 5.975L0 24l6.275-1.646A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0" />
+                  </svg>
+                </a>
+                <span>+7 708 363 2597</span>
               </div>
+            </div>
 
-              <div class="space-y-2">
-                <p class="text-white/80 font-semibold">Байланыс</p>
-                <p>8 708 523 54 76</p>
-                <p>8 700 641 88 45</p>
-              </div>
+            <div>
+              <p class="footer-title">Байланыс</p>
+              <p>8 708 523 54 76</p>
+              <p>8 700 641 88 45</p>
+            </div>
 
-              <div class="space-y-2">
-                <p class="text-white/80 font-semibold">Компания</p>
-                <p>ИП ӘБДІҒАППАР</p>
-                <p>БИН (ИИН): 070630500196</p>
-              </div>
+            <div>
+              <p class="footer-title">Компания</p>
+              <p>ИП ӘБДІҒАППАР</p>
+              <p>БИН (ИИН): 070630500196</p>
+            </div>
 
-              <div class="space-y-2">
-                <p class="text-white/80 font-semibold">Адрес</p>
-                <p>Казахстан, с. Абибола, УЛИЦА С. АБДЫРАЙМОВ, дом 36</p>
-                <p>Фактический адрес: г. Алматы, БЦ Жибек Жолы 135</p>
-              </div>
+            <div>
+              <p class="footer-title">Адрес</p>
+              <p>Казахстан, с. Абибола, УЛИЦА С. АБДЫРАЙМОВ, дом 36</p>
+              <p>Фактический адрес: г. Алматы, БЦ Жибек Жолы 135</p>
+            </div>
 
-              <div class="space-y-2">
-                <p class="text-white/80 font-semibold">Банк</p>
-                <p>АО "Kaspi Bank"</p>
-                <p>КБе: 19</p>
-                <p>БИК: CASPKZKA</p>
-                <p>Номер счёта: KZ31722S000046980264</p>
-              </div>
-
+            <div>
+              <p class="footer-title">Банк</p>
+              <p>АО "Kaspi Bank"</p>
+              <p>КБе: 19</p>
+              <p>БИК: CASPKZKA</p>
+              <p>Номер счёта: KZ31722S000046980264</p>
             </div>
           </div>
 
-          <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
+          <div class="footer-bottom">
             <p>© <span id="year"></span> Deva Health. Барлық құқықтар қорғалған.</p>
           </div>
         </div>
@@ -645,10 +517,11 @@
       <div class="whatsapp-float">
         <a href="https://wa.me/77083632597" aria-label="WhatsApp">
           <span class="whatsapp-icon">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.655-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.521.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.074-.149-.669-1.613-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.1 3.204 5.077 4.487.708.306 1.262.489 1.694.625.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.413-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.89-9.884a9.86 9.86 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c-.003 5.45-4.438 9.884-9.888 9.884M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.168 1.598 5.975L0 24l6.275-1.646A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0" />
             </svg>
           </span>
+          <span class="whatsapp-text">WhatsApp</span>
         </a>
       </div>
     </div>
