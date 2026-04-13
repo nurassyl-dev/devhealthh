@@ -10,33 +10,26 @@ function scrollToId(id) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Footer year
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 
-  // Smooth scrolling for buttons marked with data-scroll
   document.querySelectorAll("[data-scroll]").forEach((btn) => {
     btn.addEventListener("click", () => scrollToId(btn.getAttribute("data-scroll")));
   });
 
-  // Nav background on scroll
   const nav = document.getElementById("topNav");
   if (nav) {
     const apply = () => {
-      const scrolled = window.scrollY > 50;
-      if (scrolled) {
-        nav.classList.remove("bg-transparent", "py-6");
-        nav.classList.add("bg-card/95", "backdrop-blur-md", "shadow-sm", "py-4");
+      if (window.scrollY > 40) {
+        nav.classList.add("nav--scrolled");
       } else {
-        nav.classList.add("bg-transparent", "py-6");
-        nav.classList.remove("bg-card/95", "backdrop-blur-md", "shadow-sm", "py-4");
+        nav.classList.remove("nav--scrolled");
       }
     };
     apply();
     window.addEventListener("scroll", apply);
   }
 
-  // FAQ accordion: only one open at a time
   const faq = document.getElementById("faq");
   if (faq) {
     const items = Array.from(faq.querySelectorAll("button[aria-controls]"));
@@ -49,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const isOpen = btn.getAttribute("aria-expanded") === "true";
 
-        // Close others
         items.forEach((otherBtn) => {
           const otherId = otherBtn.getAttribute("aria-controls");
           const otherPanel = otherId ? document.getElementById(otherId) : null;
@@ -58,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
           otherPanel.classList.add("hidden");
         });
 
-        // Toggle current
         if (!isOpen) {
           btn.setAttribute("aria-expanded", "true");
           panel.classList.remove("hidden");
@@ -67,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Product cards: expandable details (one open at a time)
   const productButtons = Array.from(document.querySelectorAll("[data-product-toggle]"));
   if (productButtons.length) {
     productButtons.forEach((btn) => {
@@ -85,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const other = document.getElementById(`product-${otherKey}-details`);
           if (!other) return;
           other.classList.add("hidden");
-          otherBtn.textContent = "Толығырақ";
+          otherBtn.textContent = "Подробнее";
         });
 
         if (!isOpen) {
